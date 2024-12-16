@@ -46,7 +46,11 @@ require("ibl").setup()
 -- telescope
 require('telescope').setup {
   extensions = {
-    fzf = {}
+    fzf = {},
+    file_browser = {}
   }
 }
 require('telescope').load_extension('fzf')
+require('telescope').load_extension('file_browser')
+
+require("typescript-tools").setup {}

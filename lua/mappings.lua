@@ -10,6 +10,20 @@ vim.keymap.set('n', '<leader>fd', builtin.lsp_definitions, { desc = 'Telescope l
 -- vim.keymap.set('n', '<leader>fD', builtin.lsp_implementations, { desc = 'Telescope lists LSP outgoing calls for word under the cursor' })
 vim.keymap.set('n', '<leader>ft', builtin.treesitter, { desc = 'Telescope lists Function names, variables, from Treesitter' })
 vim.keymap.set('n', '<leader>ss', builtin.current_buffer_fuzzy_find, { desc = 'Live fuzzy search inside of the currently open buffer' })
+vim.keymap.set("n", "<space>fb", function()
+	require("telescope").extensions.file_browser.file_browser()
+end)
 
 
 vim.keymap.set('n', '<leader>gg', function() neogit.open({ kind = split }) end, { desc = 'Open Git' })
+
+
+-- vim.keymap.set("n", "<Leader>tf", function()
+--   require("telescope").extensions.frecency.frecency {}
+-- end)
+-- Use a specific workspace tag:
+vim.keymap.set("n", "<Leader>pf", function()
+  require("telescope").extensions.frecency.frecency {
+    workspace = "CWD",
+  }
+end)
